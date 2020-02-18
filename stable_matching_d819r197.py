@@ -56,14 +56,14 @@ class PersonPairing:
             print(woman.interestRanking)
 
     def showPairs(self):
-        print("\nResulting Pairs of Couples: ")
-        print("[", end = '')
+        #print("\nResulting Pairs of Couples: ")
+        #print("[", end = '')
         for male in self.maleInterestMatrix:
             if male.engagedTo != None:
-                print("(" + str(male.id+1) + "," + str(male.engagedTo.id+1) + ") ", end = '')
+                print("" + str(male.id+1) + ", " + str(male.engagedTo.id+1))
             else:
                 print("(Male " + str(male.id+1) +" is not engaged to anyone)")
-        print("]")
+        #print("]")
 
     def stableMatch(self):
         #While there is a free man who hasnt propose to everyone
@@ -120,7 +120,7 @@ class PersonPairing:
 
 def main():
     personPair = PersonPairing(sys.argv[1])
-    personPair.showInterestMatrices()
+    #personPair.showInterestMatrices()
     personPair.stableMatch()
     personPair.showPairs()
 
